@@ -1,0 +1,22 @@
+{
+  "name": "project-binome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "projet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SNarboni/project-binome.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SNarboni/project-binome/issues"
+  },
+  "homepage": "https://github.com/SNarboni/project-binome#readme",
+  "dependencies": {
+    "prompt": "^1.1.0"
+  }
+}
