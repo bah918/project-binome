@@ -13,11 +13,11 @@ var grid = [
     [" ", " ", " ", " ", "S", " ", " ", " ", " ", " "]
 ];
 
-var rover = {
+var rover = [{
     direction: "N",
     x: 0,
     y: 0,
-};
+}];
 
 // fonction pour tourner a droite
 var tab = [];
