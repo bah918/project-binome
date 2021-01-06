@@ -1,4 +1,4 @@
-// ca marche
+var prompt = require('prompt');
 
 var grid = [
     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
@@ -31,6 +31,7 @@ function turnLeft(rover) {
     } else if (rover.direction === "E") {
         rover.direction = "N";
     }
+    rover.travelLog.push(rover.direction)
     console.log(rover);
 }
 
@@ -49,7 +50,8 @@ function turnRight(rover) {
             rover.direction = "N";
             break;
     }
-    console.log(rover);
+    rover.travelLog.push(rover.direction)
+    console.log(rover)
 }
 
 function moveForward(rover) {
@@ -62,26 +64,25 @@ function moveForward(rover) {
     } else if (rover.direction === "O") {
         rover.x = rover.x - 1;
     }
+    rover.travelLog.push("F")
     console.log(rover)
 }
 
 function pilotRover(string) {
+    prompt.start();
     var mouvement = [];
     mouvement = string.toUpperCase().split("");
     for (var i = 0; i < mouvement.length; i++) {
         if (mouvement[i] === "L") {
             turnLeft(rover);
-            console.log("+1 à gauche");
         } else if (mouvement[i] === "R") {
             turnRight(rover);
-            console.log("+1 à droite");
         } else if (mouvement[i] === "F") {
-            moveForward(rover)
+            moveForward(rover);
+
         } else {
-            console.log("je sais pas !")
+            console.log("je sais pas !");
         }
     }
-    console.log(mouvement)
 }
-
-pilotRover("Rrrff");
+pilotRover(process.argv[2]);
