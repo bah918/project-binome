@@ -82,6 +82,36 @@ function moveForward(rover) {
     console.log(rover);
 }
 
+function moveBackward(rover) {
+    if (rover.direction === "N") {
+        if (rover.y === 0) {
+            console.log("je peux pas");
+        } else {
+            rover.y += 1;
+        }
+    } else if (rover.direction === "S") {
+        if (rover.y === 9) {
+            console.log("je peux pas");
+        } else {
+            rover.y -= 1;
+        }
+    } else if (rover.direction === "E") {
+        if (rover.x === 9) {
+            console.log("je peux pas");
+        } else {
+            rover.x -= 1;
+        }
+    } else if (rover.direction === "O") {
+        if (rover.x === 0) {
+            console.log("je peux pas");
+        } else {
+            rover.x += 1;
+        }
+    }
+    console.log(rover);
+}
+
+
 function pilotRover(string) {
     prompt.start();
     var mouvement = [];
@@ -94,11 +124,18 @@ function pilotRover(string) {
         } else if (mouvement[i] === "F") {
             moveForward(rover);
             rover.travelLog.push(`[${rover.x}][${rover.y}]`)
-        } else {
+            
+        }else if(mouvement[i]==="B"){
+            moveBackward(rover);
+            rover.travelLog.push(`[${rover.x}][${rover.y}]`)
+        }
+        
+        else {
             console.log("je sais pas !");
         }
     }
     console.log(rover);
 
 }
+
 pilotRover(process.argv[2]);
