@@ -129,7 +129,7 @@ function pilotRover(string) {
             moveBackward(rover);
             rover.travelLog.push(`[X:${rover.x}][Y:${rover.y}]`)
         } else {
-            console.log("je sais pas !");
+            console.log("je ne conais pas cette direction, je marrète !");
         }
     }
     console.log(rover);
