@@ -124,13 +124,11 @@ function pilotRover(string) {
         } else if (mouvement[i] === "F") {
             moveForward(rover);
             rover.travelLog.push(`[${rover.x}][${rover.y}]`)
-            
-        }else if(mouvement[i]==="B"){
+
+        } else if (mouvement[i] === "B") {
             moveBackward(rover);
             rover.travelLog.push(`[${rover.x}][${rover.y}]`)
-        }
-        
-        else {
+        } else {
             console.log("je sais pas !");
         }
     }
