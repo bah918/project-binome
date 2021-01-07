@@ -53,20 +53,34 @@ function turnRight(rover) {
     console.log(rover);
 }
 
-// function moveForward(rover) {
-//     if (rover.x === 9 || rover.y === -9) {
-//         console.log("je ne peux pas avancé");
-//     } else if (rover.direction === "N") {
-//         rover.y += 1;
-//     } else if (rover.direction === "S") {
-//         rover.y = rover.y - 1;
-//     } else if (rover.direction === "E") {
-//         rover.x += 1;
-//     } else if (rover.direction === "O") {
-//         rover.x = rover.x - 1;
-//     }
-//     console.log(rover);
-// }
+function moveForward(rover) {
+    if (rover.direction === "N") {
+        if (rover.y === 0) {
+            console.log("je peux pas");
+        } else {
+            rover.y -= 1;
+        }
+    } else if (rover.direction === "S") {
+        if (rover.y === 9) {
+            console.log("je peux pas");
+        } else {
+            rover.y += 1;
+        }
+    } else if (rover.direction === "E") {
+        if (rover.x === 9) {
+            console.log("je peux pas");
+        } else {
+            rover.x += 1;
+        }
+    } else if (rover.direction === "O") {
+        if (rover.x === 0) {
+            console.log("je peux pas");
+        } else {
+            rover.x -= 1;
+        }
+    }
+    console.log(rover);
+}
 
 function pilotRover(string) {
     prompt.start();
