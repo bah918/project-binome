@@ -120,7 +120,7 @@ function pilotRover(string) {
         if (mouvement[i] === "L") {
             turnLeft(rover);
         } else if (mouvement[i] === "R") {
-            turnRight(rover);
+            turnRight(rover);rover.direction = "S";
         } else if (mouvement[i] === "F") {
             moveForward(rover);
             rover.travelLog.push(`[X:${rover.x}][Y:${rover.y}]`)
